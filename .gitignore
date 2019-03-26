@@ -2,6 +2,9 @@
 google_client_secrets.json
 facebook_client_secrets.json
 
+# Database
+itemcatalog.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

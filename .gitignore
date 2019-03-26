@@ -1,3 +1,7 @@
+# Client keys and secrets
+google_client_secrets.json
+facebook_client_secrets.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

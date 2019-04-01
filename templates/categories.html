@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row border-between">
+    <div class="col-md-3">
+        {% include "categorylist.html" %}
+    </div>
+<div class="col-md-9">
+    <div class="row divider yellow">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row banner item">
+        <div class="col-md-11 col-md-offset-1 padding-none">
+            <h1>Latest Items</h1>
+        </div>
+    </div>
+        {% for item in latestItems %}
+        <div class="row item">
+            <div class="col-xs-12">
+                <a href="{{url_for('showItem', item_id = item.id)}}">{{item.name}}</a> ({{item.category.name}})
+                {% if (session.get('user_id') is not none)%}
+                <a href="{{url_for('editItem', item_id = item.id)}}">Edit</a> |
+                <a href="{{url_for('deleteItem', item_id = item.id)}}">Delete</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

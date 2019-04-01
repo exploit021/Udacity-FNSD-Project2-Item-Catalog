@@ -1,0 +1,26 @@
+<div class="row divider yellow">
+    <div class="col-md-12"></div>
+</div>
+<div class="row banner item">
+    <div class="col-md-11 col-md-offset-1 padding-none">
+        <h1>Categories</h1>
+    </div>
+</div>
+
+{% if (session.get('user_id') is not none)%}
+<div class="row side-menu">
+    <div class="col-xs-12">
+        <a href="{{url_for('newCategory')}}">+ Add a category</a>
+    </div>
+</div>
+{% endif %}
+
+{% for category in categories %}
+<div class="row side-menu">
+    <div class="col-xs-12">
+        <a href="{{url_for('showCategory', category_id=category.id)}}">
+            {{category.name}}
+        </a>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row divider yellow">
+    <div class="col-md-12"></div>
+</div>
+<div class="row banner item">
+    <div class="col-md-11 col-md-offset-1 padding-none">
+        <h1>{{item.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-1 padding-top">
+        Category: <a href="{{url_for('showCategory', category_id=item.category_id)}}">{{item.category.name}}</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-1 padding-top">
+        Description: {% if item.description is not none and item.description|length > 0 %}
+        {{item.description}}
+        {% else %}
+        <span class="text-light">No description</span>
+        {% endif %}
+    </div>
+</div>
+{% if (session.get('user_id') is not none)%}
+<div class="row">
+    <div class="col-md-6 col-md-offset-1 padding-top">
+        <a href="{{url_for('editItem', item_id=item.id)}}">
+            <button class="btn btn-default edit">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</button>
+        </a>
+        <a href="{{url_for('deleteItem', item_id=item.id)}}">
+            <button class="btn btn-default delete">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Delete</button>
+        </a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

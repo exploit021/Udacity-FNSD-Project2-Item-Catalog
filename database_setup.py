@@ -24,7 +24,6 @@ class Category(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
-    datetime = Column(DateTime)
     user = relationship(User)
     items = relationship(
         "Item",
@@ -39,7 +38,6 @@ class Category(Base):
             'name': self.name,
             'user_id': self.user_id,
             'items': [i.serialize for i in self.items],
-            'datetime': self.datetime.strftime('%a, %d %b %Y %H:%M:%S GMT')
         }
 
 
@@ -50,7 +48,6 @@ class Item(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
     description = Column(String(1000))
-    datetime = Column(DateTime)
     category_id = Column(Integer, ForeignKey('category.id'))
     category = relationship(Category)
     user_id = Column(
@@ -67,7 +64,6 @@ class Item(Base):
             'description': self.description,
             'user_id': self.user_id,
             'category_id': self.category_id,
-            'datetime': self.datetime.strftime('%a, %d %b %Y %H:%M:%S GMT')
         }
 
 

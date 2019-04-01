@@ -18,8 +18,9 @@ You will develop an application that provides a list of items within a variety o
 
 
 ### Prerequisits for External Autentication
-* Google Authentication: You need ClientID and ClientSecret to use Google Authentication.
-* To create keys for your own, please refer a [link](https://developers.google.com/identity/protocols/OAuth2).
+1. Google Authentication
+    * You need ClientID and ClientSecret to use Google Authentication.
+    * To create keys for your own, please refer a [link](https://developers.google.com/identity/protocols/OAuth2).
 ```
 {"web":
     {
@@ -35,9 +36,10 @@ You will develop an application that provides a list of items within a variety o
 ```
 
 
-* Facebook Authentication: You need AppID and AppSecret to use Facebook Authentication and have to run your application on HTTPS.
-* To create key for your own, please refer a [link](https://developers.facebook.com/docs/facebook-login/web).
-* Note: it is required to use HTTPS for Facebook Authentication. If you are test locally, and testing under http://localhost:5000 it will not work. The json file should be formatted like:
+2. Facebook Authentication
+    * You need AppID and AppSecret to use Facebook Authentication and have to run your application on HTTPS.
+    * To create key for your own, please refer a [link](https://developers.facebook.com/docs/facebook-login/web).
+    * Note: it is required to use HTTPS for Facebook Authentication. If you are test locally, and testing under http://localhost:5000 it will not work. The json file should be formatted like:
 ```
 {
     "web": {

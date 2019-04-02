@@ -342,10 +342,10 @@ def editCategory(category_id):
     if 'username' not in login_session:
         return redirect('/login')
     if categoryToEdit.user_id != login_session['user_id']:
-        return "<script>function myFunction() {alert('You\
-            are not authorized to edit this category.\
-            Please create your own category in order\
-            to edit.');}</script><body onload='myFunction()'>"
+        return "<script>function myFunction() {alert(\
+            'You are not authorized to edit this category.\\n\
+            Please go back and create your own category in order to edit.');}\
+            </script><body onload='myFunction()'>"
     if request.method == 'POST':
         if request.form['name']:
             categoryToEdit.name = request.form['name']
@@ -364,10 +364,10 @@ def deleteCategory(category_id):
     if 'username' not in login_session:
         return redirect('/login')
     if categoryToDelete.user_id != login_session['user_id']:
-        return "<script>function myFunction() {alert('You\
-            are not authorized to delete this category.\
-            Please create your own category in order\
-            to delete.');}</script><body onload='myFunction()'>"
+        return "<script>function myFunction() {alert(\
+            'You are not authorized to delete this category.\\n\
+            Please go back and create your own in order to delete.');}\
+            </script><body onload='myFunction()'>"
     if request.method == 'POST':
         session.delete(categoryToDelete)
 
@@ -434,10 +434,10 @@ def editItem(item_id):
     item = session.query(Item).filter_by(id=item_id).one()
     categories = session.query(Category).order_by(asc(Category.name)).all()
     if item.user_id != login_session['user_id']:
-        return "<script>function myFunction() {alert('You\
-         are not authorized to edit this item.\
-          Please create your own item in order\
-           to edit.');}</script><body onload='myFunction()'>"
+        return "<script>function myFunction() {alert(\
+            'You are not authorized to edit this item.\\n\
+            Please go back and create your own item in order to edit.');}\
+            </script><body onload='myFunction()'>"
     if request.method == 'POST':
         if request.form['name']:
             item.name = request.form['name']
@@ -472,10 +472,10 @@ def deleteItem(item_id):
         return redirect('/login')
     item = session.query(Item).filter_by(id=item_id).one()
     if item.user_id != login_session['user_id']:
-        return "<script>function myFunction() {alert('You\
-            are not authorized to delete this item.\
-            Please create your own item in order\
-            to delete.');}</script><body onload='myFunction()'>"
+        return "<script>function myFunction() {alert(\
+            'You are not authorized to delete this item.\\n\
+            Please go back and create your own item in order to item.\\n');}\
+            </script><body onload='myFunction()'>"
     if request.method == 'POST':
         session.delete(item)
         session.commit()

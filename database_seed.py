@@ -29,13 +29,20 @@ if session.query(Category).count() == 0:
 # Add initial items
 if session.query(Item).count() == 0:
     items = []
-    items.append(Item(name="Soccer ball", category_id=1, user_id="1", description="Soccer ball description"))
-    items.append(Item(name="Net", category_id=1, user_id="1", description="Net description"))
-    items.append(Item(name="Hoop", category_id=2, user_id="1", description="Hoop description"))
-    items.append(Item(name="Ball", category_id=2, user_id="1", description="Ball description"))
-    items.append(Item(name="Bat", category_id=3, user_id="1", description="Bat description"))
-    items.append(Item(name="Ball", category_id=3, user_id="1", description="Ball description"))
-    items.append(Item(name="Disc", category_id=4, user_id="1", description="Disc description"))
+    items.append(Item(name="Soccer ball", category_id=1,
+                      user_id="1", description="Soccer ball description"))
+    items.append(Item(name="Net", category_id=1,
+                      user_id="1", description="Net description"))
+    items.append(Item(name="Hoop", category_id=2,
+                      user_id="1", description="Hoop description"))
+    items.append(Item(name="Ball", category_id=2,
+                      user_id="1", description="Ball description"))
+    items.append(Item(name="Bat", category_id=3,
+                      user_id="1", description="Bat description"))
+    items.append(Item(name="Ball", category_id=3,
+                      user_id="1", description="Ball description"))
+    items.append(Item(name="Disc", category_id=4,
+                      user_id="1", description="Disc description"))
     items.append(Item(
         name="Snowboard", category_id=5, user_id="1",
         description="Best for any terrain and conditions. "
@@ -48,13 +55,20 @@ if session.query(Item).count() == 0:
                     "Because of their versability, all-mountain boards are "
                     "good for beginners who are "
                     "still learning what terrain they like."))
-    items.append(Item(name="Goggle", category_id=5, user_id="1", description="Goggle description"))
-    items.append(Item(name="Ropes", category_id=6, user_id="1", description="Ropes description"))
-    items.append(Item(name="Table", category_id=7, user_id="1", description="Table description"))
-    items.append(Item(name="Skates", category_id=8, user_id="1", description="Skates description"))
-    items.append(Item(name="Gloves", category_id=8, user_id="1", description="Gloves description"))
-    items.append(Item(name="Stick", category_id=9, user_id="1", description="Stick description"))
-    items.append(Item(name="Puck", category_id=9, user_id="1", description="Puck description"))
+    items.append(Item(name="Goggle", category_id=5,
+                      user_id="1", description="Goggle description"))
+    items.append(Item(name="Ropes", category_id=6,
+                      user_id="1", description="Ropes description"))
+    items.append(Item(name="Table", category_id=7, user_id="1",
+                      description="Table description"))
+    items.append(Item(name="Skates", category_id=8, user_id="1",
+                      description="Skates description"))
+    items.append(Item(name="Gloves", category_id=8, user_id="1",
+                      description="Gloves description"))
+    items.append(Item(name="Stick", category_id=9, user_id="1",
+                      description="Stick description"))
+    items.append(Item(name="Puck", category_id=9, user_id="1",
+                      description="Puck description"))
     for item in items:
         session.add(item)
     session.commit()

@@ -118,3 +118,11 @@ color: #454140;
 .banner h1 {
 margin: 45px 0;
 }
+
+input:invalid {
+	border: 2px dashed red;
+}
+  
+input:valid {
+	border: 2px solid black;
+}

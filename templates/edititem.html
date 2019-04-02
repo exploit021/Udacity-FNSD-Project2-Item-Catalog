@@ -13,9 +13,9 @@
 		<form action="#" method="post">
 			<div class="form-group">
 				<label for="name">Name:</label>
-				<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name}}" placeholder="Name of the item">
+				<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name}}" placeholder="Name of the item" required>
 				<label for="description">Description:</label>
-				<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the item">{{item.description}}</textarea>
+				<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the item" required>{{item.description}}</textarea>
 				<div class="form-group">
 					<label for="category">Category:</label>
 					<select class="form-control" name="category">

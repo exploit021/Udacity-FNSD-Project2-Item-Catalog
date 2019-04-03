@@ -56,7 +56,7 @@ def fbconnect():
         response.headers['Content-Type'] = 'application/json'
         return response
     access_token = request.data
-    print("access token received %s " % access_token)
+    print "access token received %s " % access_token
 
     app_id = json.loads(
         open('facebook_client_secrets.json', 'r').read())['web']['app_id']
@@ -184,7 +184,7 @@ def gconnect():
     if result['issued_to'] != GOOGLE_CLIENT_ID:
         response = make_response(
             json.dumps("Token's client ID does not match app's."), 401)
-        print("Token's client ID does not match app's.")
+        print "Token's client ID does not match app's."
         response.headers['Content-Type'] = 'application/json'
         return response
 

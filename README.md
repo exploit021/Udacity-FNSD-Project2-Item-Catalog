@@ -10,7 +10,7 @@ You will develop an application that provides a list of items within a variety o
 ### Installation:
 * Virtualbox
 * Vagrant
-* Python
+* Python2
 
 ### Setup Enviromnemt
 * Download or Clone [Full Stack Nanodegree Virtual Machine](https://github.com/udacity/fullstack-nanodegree-vm).
@@ -21,34 +21,44 @@ You will develop an application that provides a list of items within a variety o
 1. Google Authentication
     * You need ClientID and ClientSecret to use Google Authentication.
     * To create keys for your own, please refer a [link](https://developers.google.com/identity/protocols/OAuth2).
-```
-{"web":
-    {
-        "client_id":"YOUR_CLIENT_ID_HERE",
-        "project_id":"YOUR_PROJECT_ID",
-        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
-        "token_uri":"https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret":"YOUR_CLIENT_SECRET",
-        "redirect_uris":["http://localhost:5000"]
-    }
-}
-```
+    * The file name should be like below and located same folder as itemcatalog.py
+        ```
+        google_client_secrets.json
+        ```
+    * The content for the file should be like below:
+        ```
+        {"web":
+            {
+                "client_id":"YOUR_CLIENT_ID_HERE",
+                "project_id":"YOUR_PROJECT_ID",
+                "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+                "token_uri":"https://oauth2.googleapis.com/token",
+                "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+                "client_secret":"YOUR_CLIENT_SECRET",
+                "redirect_uris":["http://localhost:5000"]
+            }
+        }
+        ```
 
 
 2. Facebook Authentication
     * You need AppID and AppSecret to use Facebook Authentication and have to run your application on HTTPS.
     * To create key for your own, please refer a [link](https://developers.facebook.com/docs/facebook-login/web).
-    * Note: it is required to use HTTPS for Facebook Authentication. If you are test locally, and testing under http://localhost:5000 it will not work. The json file should be formatted like:
-```
-{
-    "web": {
-      "app_id": "YOUR_APP_ID",
-      "app_secret": "YOUR_APP_SECRET"
-    }
-  }
-```
+     * The file name and format for ClientID and ClientSecret should be like below:
 
+        ```
+        facebook_client_secrets.json
+        ```
+    * The json file should be formatted like:
+        ```
+        {
+            "web": {
+            "app_id": "YOUR_APP_ID",
+            "app_secret": "YOUR_APP_SECRET"
+            }
+        }
+        ```
+    * Note: it is required to use HTTPS for Facebook Authentication. If you are test locally, and testing under http://localhost:5000 it will not work.
 
 
 ### Running the program
@@ -76,7 +86,6 @@ You will develop an application that provides a list of items within a variety o
 
 ```
 python itemcatalog.py
-python3 itemcatalog.py
 ```
 
 7. Navigate to http://localhost:5000 from your browser to view the site.
@@ -84,7 +93,7 @@ python3 itemcatalog.py
 ## Style Guide
 The PEP8 style guide is an excellent standard to follow.
 
-You can install the `pycodestyle` tool to test this, with `pip install pycodestyle` or `pip3 install pycodestyle` (Python 3).
+You can install the `pycodestyle` tool to test this, with `pip install pycodestyle`.
 In order to test, run the following command.
 
 ```$ pycodestyle itemcatalog.py```

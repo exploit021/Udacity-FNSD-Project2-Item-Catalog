@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
 
 Base = declarative_base()
-engine = create_engine('sqlite:///itemcatalog.db')
+engine = create_engine('postgresql://catalog:udacity@localhost/catalog')
 
 
 # Create user class
